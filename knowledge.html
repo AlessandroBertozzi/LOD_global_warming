@@ -664,22 +664,8 @@
               <div class="second-box">
                 <h4 class="metadata"><br>Theoretical Model</h4>
                 <div class="line-mf" style="margin-bottom: 40px;"></div>
-                <p>To create the theoretical model, we came back to our data model to add a new fundamental level: the level of data interpretation.
-                We wanted a theoretical model able to describe our items and related information and also flexible enough to categorize new items that could be added by searching on the Web. Similarly to our E/R Model, in the theoretical model we organized our items in four different categories, according to different narrative practices that we have individuated:   
-                <br>
-                <br>
-                1. Global warming as a <strong><span id="categories">scientific field</strong></span> with the work of the first climate scientist, <strong>Wallace Broecker</strong>, and the geological idea of the <strong>Anthropocene</strong>.
-                <br>
-                2. <strong><span id="categories">Possible interventions</strong></span> to tackle global warming such as the social movement <em>Fridays For Future</em> represented by <strong>Greta Thunberg</strong>, an entrepreneurial approach exemplified by <strong>Bill Gates</strong> and the international conference <strong>COP 21</strong> that happened in Paris in 2015.
-                <br> 
-                3. <span id="categories"><strong>Philosophical and artistic representations</strong></span> of global warming, in the work of the American philosopher <strong>Timothy Morton</strong>, the Icelandic visual artist <strong>Ólafur Elíasson</strong> and in the distopian movie <strong>Snowpiercer</strong>, where climate change started a terrible Ice Age.
-                <br>
-                4. <span id="categories"><strong>The scientific outreach</strong></span> about global warming. It is crucial to inform people and to simplify complex scientific ideas: the work of the climate scientist <strong>Luca Mercalli</strong> and the famous documentary made by the former US Vice President Al Gore <strong><em>An Unconvenient Truth</strong></em> are good examples of this.
-                <br>
-                <br>
-                From a more practical perspective, our items belong to four categories according to their intrinsic nature: <span id="categories">text</span>, <span id="categories">multimedia</span>, <span id="categories">person</span> and <span id="categories">treaty</span> <em>(this category contains only one item, but we decided to implement it due to the nature of this object.)</em>.<br>
-                
-                To furtherly enhance the model, we described such items answering the following fundamental questions: <span id="question1">Who?</span>, <span id="question2">Where?</span>, <span id="question3">When?</span>, and <span id="question4">What?</span> <br>
+                <p>We developed an abstraction of our E/R model, obtaining a theoretical model expressed in natural language that enriched the set of entities and connections of our ten items. The questions Who?, When?, Where?, What? helped us to complete the design of the domain.
+                  Thus, through a generalization of the connectors and the classes of entities, we associated for example the Song to who performed and composed it, the Artworks to their display date and location, the Written documents to their type of text, their editor and languages. A visual graph enhances this network of connections.</p> <br>
                 <br>
               </div>
               <iframe class="iframe-part" src="https://miro.com/app/live-embed/o9J_lxxKNqU=/?moveToViewport=-2712,-1947,5654,2861" frameborder="0" scrolling="no" allowfullscreen></iframe>
@@ -701,8 +687,7 @@
               <h2>Conceptual Model</h2>
               <div class="line-mf" style="margin-bottom: 40px;"></div>
               <br>
-              <p class="description">By adopting an ontological approach, we moved to the formal representation. Indeed, we created a conceptual model by reusing existing ontologies and schemas such as RDF, DCTerms, ECRM, BF etc.
-              The conceptual model is divided into four categories according to the item format and is expressed through a table and a graphical representation. The table features three columns (Question, Predicate, Origin) respectively representing a question to furtherly investigate the items, a label taken from the ontology and the name of the ontology used to describe that particular element.<p>
+              <p class="description">By adopting an ontological approach, we moved to the formal representation. In our conceptual model, we translate the theoretical model into a higher level of abstraction, that allows us to visually show the relationship between different entities and resources. The existing widely known standards of DC/DCterms and CIDOC-CRM are the most used: the first one for the predicates that links some general characteristics to the related items, the latter mainly for the classes of objects. Other useful employed ontologies were FRBRoo and DBpedia. Furthermore, Schema.org proved to be decisive to identify some specific class of items. We divided our items in Multimedia (Documentary, Video and Videogame), Dataset, texts(Paris Agreement and the book), the musical work, the Human made object and the visual artwork.<p>
               <br>
            
               <!--Table #1-->
@@ -848,77 +833,6 @@
                         </tbody>
                       </table>
 
-              <div class="col-lg-6 video-box">
-                <br>
-            </div>
-          </div>
-          <div style="text-align: center">
-            <br>
-            <h4 class="title">Text</h4>
-            <div class="line-mf" style="margin-bottom: 40px;"></div>
-             <!--Table #3-->
-              <table class="table table-striped">
-                        <thead style="background-color:#D5E8D4;">
-                          <tr>
-                            <th>Question</th>
-                            <th>Property</th>
-                            <th>Ontology</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td>Which is the content/ description of the reosurce?</td>
-                            <td>schema: abstract</td>
-                            <td>Schema</td>
-                          </tr>
-                          <tr>
-                            <td>Which is the manifastion of the resource?</td>
-                            <td>frbroo: R4_is_embodied_in</td>
-                            <td>FRBRoo</td>
-                          </tr>
-                          <tr>
-                            <td>Which is the coutry where the work was conceived?</td>
-                            <td>schema: countryofOrigin</td>
-                            <td>Schema</td>
-                          </tr>
-                          <tr>
-                            <td>Which is the title?</td>
-                            <td>dcterms: title</td>
-                            <td>DCterms</td>
-                          </tr>
-                          <tr>
-                            <td>Where is the publishing location of the resource?</td>
-                            <td>mo: pubblishingLocation</td>
-                            <td>Music Ontology</td>
-                          </tr>
-                          <tr>
-                            <td>Who is the creator?</td>
-                            <td>dcterms: creator</td>
-                            <td>DCterms</td>
-                          </tr>
-                          <tr>
-                            <td>Which is the language of the resource?</td>
-                            <td>dcterms: language</td>
-                            <td>DCterms</td>
-                          </tr>
-                          <tr>
-                            <td>Which is the publisher?</td>
-                            <td>schema: publisher</td>
-                            <td>Schema</td>
-                          </tr>
-                          <tr>
-                            <td>What is the name of the resource?</td>
-                            <td>schema: name</td>
-                            <td>Schema</td>
-                          </tr>
-                          <tr>
-                            <td>When it was published?</td>
-                            <td>schema: datePublished</td>
-                            <td>Schema</td>
-                          </tr>
-                        </tbody>
-                      </table>
-          </div>
           <br>
           <div style="text-align: center">
             <br>
