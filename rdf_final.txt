@@ -4,63 +4,90 @@
 @prefix schema: <http://schema.org/>.
 @prefix dcterms: <https://www.dublincore.org/specifications/dublin-core/dcmi-terms/>.
 @prefix dbpedia-owl: <http://dbpedia.org/ontology/>.
-@prefix gndo: <https://d-nb.info/standards/elementset/gnd>.
-@prefix goald: <http://linguistics-ontology.org/>.
-@prefix doap: <https://github.com/ewilderj/doap>.
-@prefix mrel: <https://id.loc.gov/ontologies/madsrdf/v1.html#Authority>.
 @prefix foaf: <//xmlns.com/foaf/0.1/>.
 @prefix person: <http://www.w3.org/ns/person#>.
-@prefix core: <https://www.bbc.co.uk/ontologies/coreconcepts/>.
-@prefix npg: <http://www.nature.com/ontologies/core/>.
 @prefix owl: <http://www.w3.org/2002/07/owl#>.
-@prefix gn: <http://sws.geonames.org/>.
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix frbroo: <http://iflastandards.info/ns/fr/frbr/frbroo/>.
+@prefix core: <https://www.bbc.co.uk/ontologies/coreconcepts/>.
 @prefix crm: <http://www.cidoc-crm.org/cidoc-crm/>.
-@prefix rami: <https://github.com/i40-Tools/RAMIOntology>.
+@prefix npg: <http://www.nature.com/ontologies/core/>.
+@prefix gn: <http://sws.geonames.org/>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix viaf: <http://viaf.org/viaf/>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix soma: <http://soma-dev.sourceforge.net/SOMA_Metadata_1.htm>.
 
-<http://w3id.org/Narrations-on-Global-Warming/Object/AnInconvenientTruth/Director/DavisGuggenhaim> a crm:E39_Actor;
-	rdf:type foaf:Person ;
+<http://w3id.org/Narrations-on-Global-Warming/Movie/AnInconvenientTruth/Director/DavisGuggenhaim> a schema:person;
 	foaf:name "Davis Guggenhaim";
 	foaf:gender "Male";
 	person:placeofBirth  <http://viaf.org/viaf/265566391>; #St. Louis,Missouri,US
 	person:citizenship "American";
 	core:dateOfBirth "11/03/1963";
 	core:occupation "Director";
-	core:knownFor <http://w3id.org/Narrations-on-Global-Warming/Object/AnInconvenientTruth>;
+	core:knownFor <http://w3id.org/Narrations-on-Global-Warming/Movie/AnInconvenientTruth>;
 	owl:sameAs <https://id.ndl.go.jp/auth/ndlna/00432087>.
-<http://w3id.org/Narrations-on-Global-Warming/Object/AnInconvenientTruth/Contributor/BobRichmen> a crm:E39_Actor;
-	rdf:type foaf:Person ;
-	foaf:name "Bob Richmen";
-	foaf:gender "Male";
-	person:placeofBirth  <http://viaf.org/viaf/131953847>; #Brooklyn, New_York, US
-	person:citizenship "American";
-	core:dateOfBirth "06/13/1972";
-	core:occupation "Photography Director";
-	core:knownFor <http://w3id.org/Narrations-on-Global-Warming/Object/AnInconvenientTruth>.
-<http://w3id.org/Narrations-on-Global-Warming/Object/AnInconvenientTruth/releaseDate/24May2006> a crm:E52_Time-Span;
-	rdfs:label "May,24th 2006"; 
-	rdf:type crm:E52_Time-Span ;
-	npg:date "24/05/2006".
-<http://w3id.org/Narrations-on-Global-Warming/Object/AnInconvenientTruth/PublicationPlace/UnitedStates>  a crm:E44_Place-Appellation;
+
+<http://w3id.org/Narrations-on-Global-Warming/Object/AnInconvenientTruth/Title/AnInconvenientTruth> a schema:text;
+	crm:P15_was_influenced_by <https://en.wikipedia.org/wiki/An_Inconvenient_Truth#Title>;
+	rdfs:label "An inconvenient truth"@en.
+
+<http://w3id.org/Narrations-on-Global-Warming/Object/AnInconvenientTruth/releaseDate/24May2006> a schema:Date;
+	rdfs:label "May,24th 2006";
+	rdf:type crm:E52_Time-Span;
+	schema:datePublished "05/24/2006".
+
+<http://w3id.org/Narrations-on-Global-Warming/Object/AnInconvenientTruth/genre/Documentary> a schema:text;
+	rdfs:seeAlso <http://vocab.getty.edu/aat/300375156>;
+	dcterms:isReferencedBy <http://vocab.getty.edu/aat/300404911>.
+
+
+<http://w3id.org/Narrations-on-Global-Warming/Object/AnInconvenientTruth/producer/LaurieDavid&LawrenceBender&ScottBurns> a frbroo:11_Corporate_Body;
+	foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Lawrence_Bender>,
+			      <https://en.wikipedia.org/wiki/Scott_Z._Burns>,
+			      <https://en.wikipedia.org/wiki/Laurie_David>.
+
+<http://w3id.org/Narrations-on-Global-Warming/Object/AnInconvenientTruth/countryofOrigin/UnitedStates>  a schema:country;
 	gn:population "331,449,281" ;
 	rdf:type dbpedia-owl:nation ;
 	gn:name "United States of America" ;
 	gn:countryCode "ISO 3166-2:US";
 	owl:sameAs <http://dbpedia.org/resource/USA>. 
-<http://w3id.org/Narrations-on-Global-Warming/Object/AnInconvenientTruth/Format/DVD> a crm:E57_Material;
-	rdf:type "Video support";
-	dbpedia-owl:material "Plastic";
-	dcterms:creator <https://en.wikipedia.org/wiki/David_Paul_Gregg>;
-	crm:E50_Date "1963".
-<http://w3id.org/Narrations-on-Global-Warming/Object/AnInconvenientTruth> a crm:E31_Document;
-	rdf:type <http://w3id.org/Narrations-on-Global-Warming/Object/AnInconvenientTruth/Type/Documentary>; 
-	gndo:director <http://w3id.org/Narrations-on-Global-Warming/Object/AnInconvenientTruth/Director/DavisGuggenhaim>; 
-	goald:Language  <http://w3id.org/Narrations-on-Global-Warming/Object/AnInconvenientTruth/Language/English>;
-	dcterms:contributor <http://w3id.org/Narrations-on-Global-Warming/Object/AnInconvenientTruth/Contributor/BobRichmen>; 
-	dbpedia-owl:format <http://w3id.org/Narrations-on-Global-Warming/Object/AnInconvenientTruth/Format/DVD>; 
-	dcterms:title <http://w3id.org/Narrations-on-Global-Warming/Object/AnInconvenientTruth/Title/AnInconvenienttruth>; 
-	rami:releaseDate <http://w3id.org/Narrations-on-Global-Warming/Object/AnInconvenientTruth/releaseDate/24May2006>; 
-	schema:pusblisher <http://w3id.org/Narrations-on-Global-Warming/Object/AnInconvenientTruth/Publisher/LaurieDavid>; 
-	mrel:pup <http://w3id.org/Narrations-on-Global-Warming/Object/AnInconvenientTruth/PublicationPlace/UnitedStates>;
-	goald:subject <http://w3id.org/Narrations-on-Global-Warming/Object/AnInconvenientTruth/Subject/GlobalWarming>; 
-	dcterms:format <http://w3id.org/Narrations-on-Global-Warming/Object/AnInconvenientTruth/Lenght/97minutes>.
+	
+<http://w3id.org/Narrations-on-Global-Warming/Object/AnInconvenientTruth/about/GlobalWarming> a schema:about;
+	rdfs:label "The Global Warming"@en;
+	foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Climate_change>.
+	
+<http://w3id.org/Narrations-on-Global-Warming/Object/AnInconvenientTruth/publisher/ParamountClassics> a schema:publisher;
+	owl:sameAs <https://www.paramount.com/>;
+	skos:exactMatch viaf:145645457;
+	schema:founder "David Dinerstein",
+		      "Ruth Vitale";
+	rdf:type "label";
+	schema:parentOrganization <https://www.paramount.com/>;
+	schema:memberOf viaf:146554461,
+			<https://www.viacomcbs.com/>.
+
+<http://w3id.org/Narrations-on-Global-Warming/Object/AnInconvenientTruth/duration/97minutes> a schema:duration;
+	rdfs:label "118 min"^^xsd:time.
+	
+<http://w3id.org/Narrations-on-Global-Warming/Object/AnInconvenientTruth/associetedMedia/Movie> a schema:mediaObject;
+	dcterms:isReferencedBy <http://vocab.getty.edu/aat/300054141>; #film (discipline)
+	rdfs:seeAlso <https://it.wikipedia.org/wiki/Film>.
+	
+<http://w3id.org/Narrations-on-Global-Warming/Object/AnInconvenientTruth> a schema:movie;
+	schema:director <http://w3id.org/Narrations-on-Global-Warming/Movie/AnInconvenientTruth/Director/DavisGuggenhaim>;
+	schema:mediaObject <http://w3id.org/Narrations-on-Global-Warming/Object/AnInconvenientTruth/associetedMedia/Movie>;
+	soma:title <http://w3id.org/Narrations-on-Global-Warming/Object/AnInconvenientTruth/Title/AnInconvenientTruth>;
+	schema:datepublished <http://w3id.org/Narrations-on-Global-Warming/Object/AnInconvenientTruth/releaseDate/24May2006>;
+	schema:genre <http://w3id.org/Narrations-on-Global-Warming/Object/AnInconvenientTruth/genre/Documentary>;
+	schema:producer <http://w3id.org/Narrations-on-Global-Warming/Object/AnInconvenientTruth/producer/LaurieDavid&LawrenceBender&ScottBurns>;
+	schema:countryofOrigin <http://w3id.org/Narrations-on-Global-Warming/Object/AnInconvenientTruth/countryofOrigin/UnitedStates>;
+	schema:about <http://w3id.org/Narrations-on-Global-Warming/Object/AnInconvenientTruth/about/GlobalWarming>;
+	schema:publisher <http://w3id.org/Narrations-on-Global-Warming/Object/AnInconvenientTruth/publisher/ParamountClassics>;
+	schema:duration <http://w3id.org/Narrations-on-Global-Warming/Object/AnInconvenientTruth/duration/97minutes>.
+
+
+
+
+
